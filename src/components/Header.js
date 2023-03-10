@@ -19,15 +19,6 @@ const Header = ({onClickCart}) => {
 					<span>1205 руб.</span>
 				</li>
 				<li>
-					<Link to="/favorites">
-						<img
-							className="cu-p mr-20"
-							src="/img/favorites.svg"
-							width={18}
-							height={18}
-							alt="Закладки"
-						/>
-					</Link>
 				</li>
 				<li>
 					<img

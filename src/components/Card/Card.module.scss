@@ -7,6 +7,11 @@
 	border: 1px solid #f3f3f3;
 	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
+	.itemImage {
+		display: block;
+		margin: 0 auto;
+	}
+
 	.plus {
 		cursor: pointer;
 	}
@@ -14,11 +19,6 @@
 	&:hover {
 		transform: (translateY(-5px));
 		box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
-	}
-
-	.favorite {
-		position: absolute;
-		cursor: pointer;
 	}
 
 	span {
