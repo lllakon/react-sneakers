@@ -1,5 +1,7 @@
-import React, {useState} from "react"
+import React, { useContext } from "react"
 import ContentLoader from "react-content-loader"
+import AppContext from "../../context"
+
 import cl from "./Card.module.scss"
 
 const Card = ({
@@ -8,14 +10,14 @@ const Card = ({
 	price,
 	imageUrl,
 	onPlus,
-	cartAdded = false,
-	isLoading
+	isLoading = false
 }) => {
-	const [isAdded, setIsAdded] = useState(cartAdded)
+	const {isItemAdded} = useContext(AppContext)
+
 	const onClickPlus = () => {
 		onPlus({id, name, price, imageUrl})
-		setIsAdded(!isAdded)
 	}
+
 	return (
 		<div className={cl.card}>
 			{isLoading ? (
@@ -53,7 +55,7 @@ const Card = ({
 						<img
 							className={cl.plus}
 							onClick={onClickPlus}
-							src={isAdded ? "/img/btn-checked.svg" : "/img/btn-plus.svg"}
+							src={isItemAdded(id) ? "/img/btn-checked.svg" : "/img/btn-plus.svg"}
 							alt="Plus"
 						/>
 					</div>
