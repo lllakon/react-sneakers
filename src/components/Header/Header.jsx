@@ -24,7 +24,7 @@ const Header = ({onClickCart}) => {
 					<span>{totalPrice} руб.</span>
 				</li>
 				<li>
-					<Link to="/orders">
+					<Link to={process.env.PUBLIC_URL + '/orders'}>
 						<img
 							src="img/user.svg"
 							width={18}

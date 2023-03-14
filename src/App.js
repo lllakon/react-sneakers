@@ -117,7 +117,7 @@ function App() {
 							/>
 						}
 					/>
-					<Route path="orders" element={<Orders />} />
+					<Route path={process.env.PUBLIC_URL + '/orders'} element={<Orders />} />
 				</Routes>
 			</div>
 		</AppContext.Provider>
