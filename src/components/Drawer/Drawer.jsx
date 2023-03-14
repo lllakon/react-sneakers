@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import axios from "axios"
 
 import Info from "../info"
-import { useCart } from "../../hooks/useCart"
+import {useCart} from "../../hooks/useCart"
 
 import cl from "./Drawer.module.scss"
 
@@ -17,28 +17,33 @@ const Drawer = ({items = [], onClose, onRemove, opened}) => {
 	const onClickOrder = async () => {
 		try {
 			setIsLoading(true)
-			const {data} = await axios.post("https://640d04261a18a5db836fa653.mockapi.io/orders", {
-				items: cartItems,
-			})
+			const {data} = await axios.post(
+				"https://640d04261a18a5db836fa653.mockapi.io/orders",
+				{
+					items: cartItems,
+				}
+			)
 			setOrderId(data.id)
 			setIsOrderComplete(true)
 			setCartItems([])
 			//
 			for (let i = 0; i < cartItems.length; i++) {
 				const item = cartItems[i]
-				await axios.delete(`https://6403d1a280d9c5c7babc2244.mockapi.io/cart/${item.id}`)
+				await axios.delete(
+					`https://6403d1a280d9c5c7babc2244.mockapi.io/cart/${item.id}`
+				)
 				await delay(400)
-			//
+				//
 			}
 		} catch (error) {
-			alert('Ошибка при создании заказа :(')
+			alert("Ошибка при создании заказа :(")
 			console.log(error)
 		}
 		setIsLoading(false)
 	}
 
 	return (
-		<div className={`${cl.overlay} ${opened ? cl.overlayVisible : ''}`}>
+		<div className={`${cl.overlay} ${opened ? cl.overlayVisible : ""}`}>
 			<div className={cl.drawer}>
 				<h2 className="d-flex justify-between mb-30">
 					Корзина
@@ -82,10 +87,14 @@ const Drawer = ({items = [], onClose, onRemove, opened}) => {
 								<li>
 									<span>Налог 5%</span>
 									<div></div>
-									<b>{(totalPrice / 100 * 5).toFixed(2)} руб.</b>
+									<b>{((totalPrice / 100) * 5).toFixed(2)} руб.</b>
 								</li>
 							</ul>
-							<button disabled={isLoading} className="greenButton" onClick={onClickOrder}>
+							<button
+								disabled={isLoading}
+								className="greenButton"
+								onClick={onClickOrder}
+							>
 								Оформить заказ <img src="img/arrow.svg" alt="Arrow" />
 							</button>
 						</div>
@@ -98,9 +107,9 @@ const Drawer = ({items = [], onClose, onRemove, opened}) => {
 								? `Ваш заказ #${orderId} скоро будет передан курьерской доставке`
 								: "Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ"
 						}
-						image={
-							isOrderComplete ? "img/complete-order.png" : "img/empty-cart.png"
-						}
+						image={isOrderComplete ? "img/complete-order.png" : "img/empty-cart.png"}
+						imageSize={"120px"}
+						backBtn={true}
 					/>
 				)}
 			</div>
