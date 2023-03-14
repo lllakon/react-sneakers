@@ -1,0 +1,16 @@
+.slider {
+	max-width: 960px;
+	max-height: 300px;
+	position: relative;
+	margin: auto;
+	margin-bottom: 45px;
+	
+	img {
+		max-width: 100%;
+		
+	}
+	
+	@media (max-width:300px){
+		display: none;
+	}
+}

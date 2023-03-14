@@ -15,7 +15,7 @@ const Card = ({
 	const {isItemAdded} = useContext(AppContext)
 
 	const onClickPlus = () => {
-		onPlus({id, name, price, imageUrl})
+		onPlus({id, parentId: id, name, price, imageUrl})
 	}
 
 	return (
@@ -33,7 +33,7 @@ const Card = ({
 						<rect x="0" y="135" rx="3" ry="3" width="159" height="15" />
 						<rect x="0" y="156" rx="3" ry="3" width="103" height="15" />
 						<rect x="0" y="195" rx="8" ry="8" width="83" height="32" />
-						<rect x="127" y="196" rx="8" ry="8" width="33" height="32" />
+						{onPlus && <rect x="127" y="196" rx="8" ry="8" width="33" height="32" />}
 						<rect x="0" y="0" rx="10" ry="10" width="159" height="112" />
 					</ContentLoader>
 				</>
@@ -52,12 +52,12 @@ const Card = ({
 							<span>Цена:</span>
 							<b>{price} руб.</b>
 						</div>
-						<img
+						{onPlus && <img
 							className={cl.plus}
 							onClick={onClickPlus}
 							src={isItemAdded(id) ? "/img/btn-checked.svg" : "/img/btn-plus.svg"}
 							alt="Plus"
-						/>
+						/>}
 					</div>
 				</>
 			)}

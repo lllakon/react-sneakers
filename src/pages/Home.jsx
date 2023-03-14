@@ -1,5 +1,6 @@
 import React from 'react';
-import Card from "../components/Card"
+import SliderSlick from '../components/Slider/Slider';
+import Card from "../components/Card/Card"
 
 const Home = ({
 	items,
@@ -26,7 +27,8 @@ const Home = ({
 
 	return (
 		<div className="content p-40">
-			<div className="d-flex align-center justify-between mb-40">
+			<SliderSlick />
+			<div className="items-header d-flex align-center justify-between mb-40">
 				{searchValue ? (
 					<h1 className="text-truncate">
 						Поиск по запросу: <br /> {searchValue}
@@ -52,7 +54,7 @@ const Home = ({
 					/>
 				</div>
 			</div>
-			<div className="d-flex flex-wrap">{renderItems()}</div>
+			<div className="cards-wrapper d-flex flex-wrap">{renderItems()}</div>
 		</div>
 	)
 }
