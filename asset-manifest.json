@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-sneakers/static/css/main.42469e34.css",
+    "main.css": "/react-sneakers/static/css/main.a0ceb802.css",
     "main.js": "/react-sneakers/static/js/main.a13d9651.js",
     "static/media/slide4.jpg": "/react-sneakers/static/media/slide4.77e01a2a04c7e836bba8.jpg",
     "static/media/slide2.jpg": "/react-sneakers/static/media/slide2.4ab9770d287979f37c37.jpg",
@@ -12,11 +12,11 @@
     "static/media/slick.ttf": "/react-sneakers/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/react-sneakers/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-sneakers/index.html",
-    "main.42469e34.css.map": "/react-sneakers/static/css/main.42469e34.css.map",
+    "main.a0ceb802.css.map": "/react-sneakers/static/css/main.a0ceb802.css.map",
     "main.a13d9651.js.map": "/react-sneakers/static/js/main.a13d9651.js.map"
   },
   "entrypoints": [
-    "static/css/main.42469e34.css",
+    "static/css/main.a0ceb802.css",
     "static/js/main.a13d9651.js"
   ]
 }
