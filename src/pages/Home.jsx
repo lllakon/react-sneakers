@@ -37,13 +37,13 @@ const Home = ({
 					<h1>Все кроссовки</h1>
 				)}
 				<div className="search-block d-flex">
-					<img src="/img/search.svg" alt="Search" />
+					<img src="img/search.svg" alt="Search" />
 					{searchValue && (
 						<img
 							className="clear opacity-5 cu-p"
 							onClick={() => setSearchValue("")}
 							width={13}
-							src="/img/btn-close.svg"
+							src="img/btn-close.svg"
 							alt="Очистить"
 						/>
 					)}

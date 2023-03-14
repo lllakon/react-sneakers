@@ -30,7 +30,7 @@ const Orders = () => {
 			<div className="d-flex align-center justify-between mb-40">
 				<h1>Мои заказы</h1>
 			</div>
-			<div className="d-flex flex-wrap">
+			<div className="orders-wrapper d-flex flex-wrap">
 				{(isLoading ? [...Array(8)] : orders).map((item, index) => (
 					<Card
 						key={index}

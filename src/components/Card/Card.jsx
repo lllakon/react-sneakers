@@ -55,7 +55,7 @@ const Card = ({
 						{onPlus && <img
 							className={cl.plus}
 							onClick={onClickPlus}
-							src={isItemAdded(id) ? "/img/btn-checked.svg" : "/img/btn-plus.svg"}
+							src={isItemAdded(id) ? "img/btn-checked.svg" : "img/btn-plus.svg"}
 							alt="Plus"
 						/>}
 					</div>
